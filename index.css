@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+
+    background: #000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.game{
+    width: 416px;
+    height: 416px;
+    margin: auto;
+}
+#gameCanvas{
+    background  : #202020;
+    border      : solid 1px white;
+}
+
+.header{
+    height  : 50px;
+    font-size: 36px;
+}

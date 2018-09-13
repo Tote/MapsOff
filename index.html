@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body style="background:#202020;">
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>
+                In each floor, collect the KEY to open the DOOR and go to the next floor.
+            </p>
+            <p>
+                Go online to see the map of the floor
+            <p>
+                BUT BEWARE!!!
+            </p>
+            <p>
+                While you are online, ghosts will detect you and follow you! 
+            </p>
+            <p>
+                So, if you want to stay ALIVE, you have to stay OFFLINE!
+            </p>
+            <h2>Controls</h2>
+            <p>
+                Move with ARROWS
+            </p>
+            <p>
+                Press & Hold [SPACE] to go online and view the map
+            </p>
+        </div>
+        <div class="game">
+            <div class="header">
+                <div class="level">
+                    FLOOR
+                    <span id="levelValue">1</span>
+                </div>
+                
+            </div>
+            <canvas id="gameCanvas"></canvas>         
+        </div>
+        <script src="engine/DrawingEngine.js"></script>
+        <script src="engine/CollisionEngine.js"></script>
+        <script src="engine/KeyboardInput.js"></script>
+        <script src="engine/Element.js"></script>
+        <script src="engine/StaticImage.js"></script>
+        <script src="engine/Sprite.js"></script>
+        <script src="engine/Transition.js"></script>
+        <script src="engine/Game.js"></script>
+        <script src="game/Character.js"></script>
+        <script src="game/Enemy.js"></script>
+        <script src="game/Level.js"></script>
+        <script src="game/Splash.js"></script>
+        <script src="game/main.js"></script>
+    </body>
+</html>
