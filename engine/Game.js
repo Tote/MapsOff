@@ -2,34 +2,30 @@ class Game {
     constructor(width, height, id){
         this.graphics = new DrawingEngine(width, height, id)
         this.controls = new KeyboardInput()
-        this.rules = []
-        this.elements = []
-    }
-
-    when(check, action){
-        this.rules.push({check, action})
+        this.scenes = {}
+        this.currentScene = {}
     }
 
     run(){
-        let t = 0
-        setInterval( () => {
-            this.graphics.clear()
+        this.graphics.clear()
 
-            this.rules
-                .filter( rule => rule.check() )
-                .forEach( rule => rule.action() )
-                
-            this.elements.forEach(element =>{
-                element.nextFrame()
-                element.draw(this.graphics)
-            })
-        },
-        1/60)
+        this.currentScene.rules
+            .filter( rule => rule.check() )
+            .forEach( rule => rule.action() )
+            
+        this.currentScene.elements.forEach(element =>{
+            element.nextFrame()
+            element.draw(this.graphics)
+        })
+        window.requestAnimationFrame(this.run.bind(this))
     }
 
-    add( element ){
-        this.elements.push(element)
+    scene(id, scene){
+        this.scenes[id] = scene
     }
 
+    changeScene(id){
+        this.currentScene = this.scenes[id]
+    }
 }
 
