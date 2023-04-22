@@ -1,6 +1,6 @@
-class Enemy extends Animation {
+class Enemy{
     constructor(){
-        super()
+        
         this.position = {x:75, y:75}
         this.size = {w:16, h:16}
         this.speed = 0.5 + Math.random()*0.5
@@ -31,12 +31,6 @@ class Enemy extends Animation {
             .color(color)
             .shadow(0, 0, 3)
             .circle(
-                this.position.x,
-                this.position.y,
-                this.size.w
-            )
-            .color('black')
-            .circleBorder(
                 this.position.x,
                 this.position.y,
                 this.size.w

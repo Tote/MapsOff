@@ -3,6 +3,7 @@
         super('./assets/hero.png', 15, 8)
         this.position = {x: 100, y: 100}
         this.size = {h: 32, w: 32}
+        this.speed = 2
     }
 
     nextFrame(){
@@ -11,19 +12,19 @@
         }
 
         if( this.controls.isHeld('ArrowDown') && !this.collisions.down){
-            this.position.y += 1
+            this.position.y += this.speed
         }
 
         if( this.controls.isHeld('ArrowLeft') && !this.collisions.left){
-            this.position.x -= 1
+            this.position.x -= this.speed
         }
 
         if( this.controls.isHeld('ArrowRight') && !this.collisions.right){
-            this.position.x += 1
+            this.position.x += this.speed
         }
 
         if( this.controls.isHeld('ArrowUp') && !this.collisions.up){
-            this.position.y -= 1
+            this.position.y -= this.speed
         }
 
         super.nextFrame()
